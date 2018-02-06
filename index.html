@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<!-- define angular app -->
+<html ng-app="scotchApp" id="full-page-container">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SCROLLS -->
+    <!--<link href="Content/bootstrap.min.css" rel="stylesheet" />-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+    <!--<script src="Scripts/jquery-3.0.0.min.js"></script>
+
+    <!--<script src="Scripts/bootstrap.min.js"></script>-->
+    <!-- SPELLS -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            crossorigin="anonymous"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/jquery.nicescroll.iframehelper.min.js"></script>
+    <script src="Content/JavaScript/script.js"></script>
+    <link href="Content/devices.min.css" rel="stylesheet" />
+    <link href="Content/MyStyle.min.css" rel="stylesheet" />
+
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Karla|Lato:100|Montserrat|Raleway:100" rel="stylesheet">
+    <script>
+//$(function()
+//{
+//	var win = $(window);
+//	// Full body scroll
+//	var isResizing = false;
+//	win.bind(
+//		'resize',
+//		function()
+//		{
+//			if (!isResizing) {
+//				isResizing = true;
+//				var container = $('#full-page-container');
+//				// Temporarily make the container tiny so it doesn't influence the
+//				// calculation of the size of the document
+//				container.css(
+//					{
+//						'width': 1,
+//						'height': 1
+//					}
+//				);
+//				// Now make it the size of the window...
+//				container.css(
+//					{
+//						'width': win.width(),
+//						'height': win.height()
+//					}
+//				);
+//				isResizing = false;
+//				container.jScrollPane(
+//					{
+//						'showArrows': true
+//					}
+//				);
+//			}
+//		}
+//	).trigger('resize');
+
+//	// Workaround for known Opera issue which breaks demo (see
+//	// http://jscrollpane.kelvinluck.com/known_issues.html#opera-scrollbar )
+//	$('body').css('overflow', 'hidden');
+
+//	// IE calculates the width incorrectly first time round (it
+//	// doesn't count the space used by the native scrollbar) so
+//	// we re-trigger if necessary.
+//	if ($('#full-page-container').width() != win.width()) {
+//		win.trigger('resize');
+//	}
+
+//	// Internal scrollpanes
+//	$('.scroll-pane').jScrollPane({showArrows: true});
+//});
+
+    </script>
+
+</head>
+<!-- define angular controller -->
+<body ng-controller="mainController" data-spy="scroll" data-target="#main-navbar" data-offset="70">
+
+        <!--______________________________________________-->
+        <div class="container-fluid" id="full-page-container">
+            <header>
+                <nav class="back">
+
+                    <div class="test">
+                        <a href="#" class="btn-back">
+
+                            <div class="menu-icon burger1">
+                                <div class="burger">
+                                    <span class="burgerIcon">&#9776;</span>
+                                </div>
+                            </div>
+
+                        </a>
+                        <div class="menu-back">
+                            <ul class="nav-history">
+                                <li><a href="#"><!--<i class="fa fa-home"></i>--> Home</a></li>
+                                <li><a href="#about"><!--<i class="fa fa-shield"></i>--> About</a></li>
+                                <li><a href="#contact"><!--<i class="fa fa-comment"></i>--> Contact</a></li>
+                            </ul>
+                            <!--<ul class="nav-links">
+                                <li><a href="#">My Account</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Support / Help</a></li>
+                            </ul>-->
+                        </div>
+                    </div>
+                </nav>
+            </header>
+
+
+
+
+
+            <!--______________________________________________-->
+
+            <div id="main">
+
+                <!-- angular templating -->
+                <!-- this is where content will be injected -->
+                <div ng-view></div>
+
+            </div>
+
+            <!--<footer class="text-center">
+                <p>View the tutorial on <a href="http://scotch.io/tutorials/javascript/single-page-apps-with-angularjs-routing-and-templating">Scotch.io</a></p>
+
+                <p>View a tutorial on <a href="http://scotch.io/tutorials/javascript/animating-angularjs-apps-ngview">Animating Your Angular Single Page App</a></p>
+            </footer>-->
+
+        </div>
+
+    <!-- Smooth scrolling -->
+    <script src="Content/JavaScript/SmoothScrolling.js"></script>
+
+
+    <!-- Bootstrap 4-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+            integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+            integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+            crossorigin="anonymous"></script>
+    <!--Paroller-->
+    <script src="dist/jquery.paroller.js"></script>
+
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+
+        $(function () {
+            $('[data-paroller-factor]').paroller();
+            $('.paroller').paroller({
+                factor: 0.4,
+                type: 'foreground'
+            });
+            $('body').scrollspy({ target: '#main-navbar' });
+        });
+
+    </script>
+    <!--<script>
+        $(document).ready(function () {
+            $("html").niceScroll({
+                cursorwidth: '7px',
+                autohidemode: false,
+                zindex: 999,
+                cursorcolor: "white",
+                cursorborder: "1px solid #484D56",
+                smoothscroll: true,
+                scrollspeed: 100,
+                mousescrollstep: 40,
+                iframeautoresize: true,
+                hwacceleration: true,
+            });
+        });
+    </script>-->
+
+
+</body>
+</html>

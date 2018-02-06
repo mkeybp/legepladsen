@@ -1,0 +1,318 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Hotel Crone</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="Content/GFX/favicon-16x16.png" type="image/x-icon">
+    <link rel="icon" href="Content/GFX/favicon-16x16.png" type="image/x-icon">
+
+    <!-- Meta Tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS -->
+    <link href="Content/CSS_SASS/Bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/CSS_SASS/SASS/MyStyle.min.css" rel="stylesheet" />
+    <link href="Content/CSS_SASS/animate.css" rel="stylesheet" />
+    <link href="Content/CSS_SASS/AOS/aos.css" rel="stylesheet" />
+
+    <!-- jQuery library -->
+    <script src="Content/JS/jQuery/jquery-1.9.1.js"></script>
+
+    <!-- JavaScript -->
+    <script src="Content/JS/Bootstrap/bootstrap.min.js"></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <script>
+        $(window).scroll(function () {
+            if ($(document).scrollTop() > 50) {
+                $('nav').addClass('shrink');
+            } else {
+                $('nav').removeClass('shrink');
+            }
+        });
+
+
+        document.ontouchmove = function (event) {
+
+            var isTouchMoveAllowed = true, target = event.target;
+
+            while (target !== null) {
+                if (target.classList && target.classList.contains('disable-scrolling')) {
+                    isTouchMoveAllowed = false;
+                    break;
+                }
+                target = target.parentNode;
+            }
+
+            if (!isTouchMoveAllowed) {
+                event.preventDefault();
+            }
+        };
+
+    </script>
+
+</head>
+<body>
+
+    <div class="container-fluid">
+
+        <div class="parallax-overlay">
+
+
+            <!-- Static navbar -->
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="index.html"><img class="navbar-brand" src="Content/GFX/Logo.png" /></a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav"></ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="index.html">FORSIDE</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">MENU <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="lunch.html">FORKOST</a></li>
+                                    <li><a href="dinner.html">AFTEN</a></li>
+                                    <li><a href="dishoftheday.html">DAGENS RET</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">VINKORT</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">UD AF HUSET</a></li>
+                            <li><a href="rooms.html">VÆRELSER</a></li>
+                            <li><a href="canteensolution.html">KANTINELØSNINGER</a></li>
+                            <li><a href="about.html">OM OS</a></li>
+                            <li><a onclick="openNav()" href="#">KONTAKT</a></li>
+
+                        </ul>
+
+
+
+                    </div><!--/.nav-collapse -->
+                </div><!--/.container-fluid -->
+            </nav>
+        </div>
+    </div>
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <div class="col-xs-12 modalContact">
+                <h1>
+                    Kontakt os
+                </h1>
+                <p>Har du spørgsmål til Hotel Crone i forbindelse med et kommende arrangement,<br /> hvor du ønsker “mad ud af huset”, eller søger du et hotelværelse i Grenå</p>
+                <p>
+                    Så brug venligst formularen herunder.
+                </p>
+            </div>
+            <div class="contactForm">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <form>
+                            <div class="group">
+                                <input type="text" required>
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Email</label>
+                            </div>
+
+                            <div class="group">
+                                <input type="text" required>
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Emne</label>
+                            </div>
+                            <h4 class="text-left textareaLabel">Besked</h4>
+                            <textarea rows="6" class="message"></textarea>
+                        </form>
+                        <button class="text-center" type="submit">SEND</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 modalContact">
+                        <p><b>Adresse</b></p>
+                        <p>Havneplads 13,</p>
+                        <p>8500, Grenå</p>
+                        <p>Telefon: 86 320 157</p>
+                        <a href="mailto:hotelcrone@mail.dk">Email: hotelcrone@mail.dk</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="backgroundImage text-center dishofthedayBanner">
+        <div class="bannerOverlay" data-aos="fade-up">
+            <h1>Dagens ret</h1>
+            <h2 data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom">Dagens ret serveres fra 16:30 - 19:00 alle dage</h2>
+        </div>
+    </div>
+    <div class="parallax-overlay">
+
+
+
+        <div data-aos="fade-up" class="text-center about-us-text">
+
+
+            <p> Alle retter er til en pris af kr. 75.- ud af huset og kr. 85.- i huset.</p>
+            <p>(Dog er steak Aften til 99,- / 119,- kr.)</p>
+
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <h1>Januar</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <h3>Mandag</h3>
+                    <h4>Lukus smørrebrød</h4>
+                    <h5>Flere muligheder</h5>
+                    <p>45 kr.</p>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <h3>Tirsdag</h3>
+                    <h4>Marineret sild</h4>
+                    <h5>med æg og karrysalat</h5>
+                    <p>55 kr.</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <h3>Onsdag</h3>
+                    <h4>Stegt rødspættefilet</h4>
+                    <h5>med remoulade og rugbrød</h5>
+                    <p>45 kr.</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <h3>Torsdag</h3>
+                    <h4>Nachos</h4>
+                    <h5>med ost, kylling, salsa og creme fraiche</h5>
+                    <p>85 kr.</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <h3>Fredag</h3>
+                    <h4>Rødspættefilet</h4>
+                    <h5>med pommes frites</h5>
+                    <p>95 kr.</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <h3>Lørdag</h3>
+                    <h4>Stjerneskud</h4>
+                    <h5>med 1 stegt og 1 kogt fiskefilet m/rejer og asparges</h5>
+                    <p>99 kr.</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <h3>Søndag</h3>
+                    <h4>Luksus Stjerneskud</h4>
+                    <h5>med 2 stegte og 1 kogt fiskefilet m/rejer og asparges</h5>
+                    <p>129 kr.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-offset-1 col-xs-10">
+                    <div class="row">
+                        <div class="col-sm-3 col-xs-6 sitemap">
+                            <h5>SITEMAP</h5>
+                            <a>FORSIDE</a>
+                            <a>MENU</a>
+                            <a>ARRANGEMENTER</a>
+                            <a>UD AF HUSET</a>
+                            <a>KANTINELØSNINGER</a>
+                            <a>KONTAKT</a>
+                        </div>
+
+                        <div class="col-sm-3 col-xs-6 address">
+                            <h5>ADRESSE</h5>
+                            <p>Havneplads 13,</p>
+                            <p>8500, Grenå</p>
+                            <p>Telefon: 86 320 157</p>
+                            <a href="mailto:hotelcrone@mail.dk">Email: hotelcrone@mail.dk</a>
+                        </div>
+
+                        <div class="col-sm-3 col-xs-6 openhours">
+                            <h5>ÅBNINGSTIDER</h5>
+                            <p>Mandag - torsdag + søndag</p>
+                            <p>Kl. 11:00 - 20:00</p>
+                            <p>Fredag - lørdag</p>
+                            <p>Kl. 11:00 - 21:00</p>
+                        </div>
+
+                        <div class="col-sm-3 col-xs-6 socialmedia">
+                            <h5>FIND OS PÅ FACEBOOK</h5>
+                            <a href="https://www.facebook.com/pages/Hotel-Crone/182201005139130" class="fb"></a>
+                        </div>
+                    </div>
+                </div>
+                    <div class="col-xs-12">
+                        <p class="text-center">Copyright © 2017 Hotel Crone. All rights reserved.</p>
+                    </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function openNav() {
+            document.getElementById("myNav").style.height = "100%";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.height = "0%";
+        }
+    </script>
+    <script src="Content/JS/AOS/aos.js"></script>
+
+    <script>
+        AOS.init({
+            easing: 'ease-in-out-sine'
+        });
+    </script>
+    <script>
+        jQuery('body').bind('click', function (e) {
+            if (jQuery(e.target).closest('.navbar').length == 0) {
+                // click happened outside of .navbar, so hide
+                var opened = jQuery('.navbar-collapse').hasClass('collapse in');
+                if (opened === true) {
+                    jQuery('.navbar-collapse').collapse('hide');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
